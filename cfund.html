@@ -1,0 +1,81 @@
+<html>
+    <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR&display=swap" rel="stylesheet">
+        <script src = "../bower_components/web3/dist/web3.min.js"></script>
+        <script src = "../bower_components/jquery/dist/jquery.min.js"></script>
+        <script src = "cfund.js"></script>
+        <title>Crowd Funding</title>
+        <style>
+            body {
+                font-family: 'Noto Serif KR', serif;
+                background-color: darkseagreen;
+                color:rgb(65, 65, 65);
+                margin: 0;
+                padding-bottom: 30px;
+            }
+            h1 {
+                text-align: center;
+                box-shadow: 0 3px 10px black;
+                height: 100px;
+                padding-top: 30px;
+                background-color: rgba(38, 38, 38, 0.377);
+                margin: 0;
+            }
+            table {
+                margin: 10vh auto 0 auto;
+                width: 800px;
+            }
+            table, th, td {
+                border: 1px solid black;
+                background-color: beige;
+            }
+            th, td {
+                padding: 5px 10px;
+            }
+            th {
+                background-color:lightslategray;
+            }
+            tbody>tr:nth-child(2n-1) td{
+                background-color: lightcoral;
+            }
+            caption {
+                padding: 10px;
+                color: darkred;
+                background-color: rgba(255, 255, 255, 0.5);
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Crowd Fund</h1>
+        <table id='accountsBalanceTable'>
+        </table>
+        <table id='transferCoins'>
+            <caption><b>Fund</b></caption>
+            <tr>
+              <td>From:</td><td colspan="4" width="200px"><input type="text" id="from" style="width:100%;"/></td>
+            </tr>
+            <tr>
+              <td>Amount:</td><td><input type="text" id="amount" /></td>
+              <td>Password:</td><td><input type="password" id="password" /></td>
+              <td>
+                <button id="transferBtn">Transfer</button>
+              </td>
+            </tr>
+        </table>
+        <table id="status">
+            <caption><b>Status</b></caption>
+            <thead><th>Goal Amount</th><th>Total Amount</th></thead>
+            <tbody><tr><td></td><td></td></tr></tbody>
+        </table>
+        <table>
+            <caption><b>Fund History</b></caption>
+            <thead>
+                <th>Account</th>
+                <th>Amount</th>
+            </thead>
+            <tbody id="history"></tbody>
+        </table>
+    </body>
+</html>
